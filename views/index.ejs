@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tienda</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Productos disponibles</h1>
+    <div class="row">
+      <% productos.forEach(producto => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="<%= producto.imagen %>" class="card-img-top" alt="<%= producto.nombre %>">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title"><%= producto.nombre %></h5>
+              <p class="card-text">$<%= producto.precio %></p>
+              <form action="/agregar/<%= producto.id %>" method="POST" class="mt-auto">
+                <button type="submit" class="btn btn-primary w-100">Agregar al carrito</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+    <div class="text-center mt-4">
+      <a href="/carrito" class="btn btn-success">Ver Carrito</a>
+    </div>
+  </div>
+</body>
+</html>

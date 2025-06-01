@@ -12,7 +12,15 @@
         "productId": 3,
         "title": "Mochila de Viaje",
         "quantity": 1,
-        "price": 35.50
+        "price": 35.5
+      },
+      {
+        "id": 1,
+        "quantity": 1
+      },
+      {
+        "id": 3,
+        "quantity": 1
       }
     ],
     "totalPrice": 67.48

@@ -1,42 +1,41 @@
 [
-    {
-      "id": 1,
-      "title": "Camiseta de Algodón",
-      "description": "Camiseta suave y cómoda de algodón 100%",
-      "code": "CAM001",
-      "price": 15.99,
-      "status": true,
-      "stock": 50,
-      "category": "Ropa",
-      "thumbnails": [
-        "https://example.com/images/camiseta1.jpg"
+  {
+    "id": 1,
+    "title": "Camiseta de Algodón",
+    "description": "Camiseta suave y cómoda de algodón 100%",
+    "code": "CAM001",
+    "price": 15.99,
+    "status": true,
+    "stock": 50,
+    "category": "Ropa",
+    "thumbnails": [
+      "images/polera-algodon.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Zapatos Deportivos",
+    "description": "Zapatos deportivos de alta calidad para correr.",
+    "code": "ZAP002",
+    "price": 49.99,
+    "status": true,
+    "stock": 30,
+    "category": "Calzado",
+    "thumbnails": [
+      "images/zapatos-deportivos.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Mochila de Viaje",
+    "description": "Mochila resistente al agua con múltiples compartimentos.",
+    "code": "MOC003",
+    "price": 35.50,
+    "status": true,
+    "stock": 20,
+    "category": "Accesorios",
+    "thumbnails": [
+      "images/mochila-viaje.jpg"
       ]
-    },
-    {
-      "id": 2,
-      "title": "Zapatos Deportivos",
-      "description": "Zapatos deportivos de alta calidad para correr.",
-      "code": "ZAP002",
-      "price": 49.99,
-      "status": true,
-      "stock": 30,
-      "category": "Calzado",
-      "thumbnails": [
-        "https://example.com/images/zapatos1.jpg"
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Mochila de Viaje",
-      "description": "Mochila resistente al agua con múltiples compartimentos.",
-      "code": "MOC003",
-      "price": 35.50,
-      "status": true,
-      "stock": 20,
-      "category": "Accesorios",
-      "thumbnails": [
-        "https://example.com/images/mochila1.jpg"
-      ]
-    }
-  ]
-  
+  }    
+]
