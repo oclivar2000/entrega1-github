@@ -67,6 +67,41 @@ app.get('/carrito', (req, res) => {
   res.render('carrito', { carrito });
 });
 
+// Eliminar un producto del carrito
+app.post('/eliminar/:id', (req, res) => {
+  const productoId = parseInt(req.params.id);
+  if (!req.session.carrito) return res.redirect('/carrito');
+
+  req.session.carrito = req.session.carrito.filter(item => item.producto.id !== productoId);
+  res.redirect('/carrito');
+});
+
+// Vaciar el carrito completamente
+app.post('/vaciar-carrito', (req, res) => {
+  req.session.carrito = [];
+  res.redirect('/carrito');
+});
+
+// Restar cantidad de un producto del carrito
+app.post('/restar/:id', (req, res) => {
+  const productoId = parseInt(req.params.id);
+  if (!req.session.carrito) return res.redirect('/carrito');
+
+  const itemIndex = req.session.carrito.findIndex(item => item.producto.id === productoId);
+
+  if (itemIndex !== -1) {
+    if (req.session.carrito[itemIndex].cantidad > 1) {
+      req.session.carrito[itemIndex].cantidad--;
+    } else {
+      // Si la cantidad es 1, lo elimina
+      req.session.carrito.splice(itemIndex, 1);
+    }
+  }
+
+  res.redirect('/carrito');
+});
+
+
 // Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
