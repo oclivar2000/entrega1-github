@@ -31,3 +31,12 @@ body {
   background-color: #198754cc;
 }
 
+
+table td, table th {
+  vertical-align: middle;
+}
+
+.btn-group form {
+  display: inline-block;
+  margin: 0 2px;
+}
