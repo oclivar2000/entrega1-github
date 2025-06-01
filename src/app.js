@@ -46,9 +46,20 @@ app.post('/agregar/:id', (req, res) => {
 
   if (!req.session.carrito) req.session.carrito = [];
 
-  req.session.carrito.push(producto);
+  // Buscar si ya existe el producto en el carrito
+  const itemEnCarrito = req.session.carrito.find(item => item.producto.id === productoId);
+
+  if (itemEnCarrito) {
+    // Si existe, aumentar cantidad
+    itemEnCarrito.cantidad += 1;
+  } else {
+    // Si no existe, agregar nuevo con cantidad 1
+    req.session.carrito.push({ producto, cantidad: 1 });
+  }
+
   res.redirect('/carrito');
 });
+
 
 // Ver productos del carrito
 app.get('/carrito', (req, res) => {
